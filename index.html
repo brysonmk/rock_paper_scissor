@@ -1,0 +1,40 @@
+<script>
+    function getComputerChoice(){
+        let choice = Math.floor(Math.random() * 3) +1;
+        switch (choice){
+            case 1:
+                return "Rock";
+                break;
+            case 2:
+                return "Paper";
+                break;
+            case 3:
+                return "Scissors";
+                break;
+        }
+    }
+
+
+    function playRound(playerSelection, computerSelection){
+        player_value = playerSelection.toUpperCase()
+        computer_value = computerSelection.toUpperCase()
+        
+        if (player_value == computer_value){
+            return "Draw! " + playerSelection + " ties " + computerSelection;
+        }
+        else if ((player_value === "ROCK" && computer_value === "SCISSORS") ||
+                (player_value === "PAPER" && computer_value === "ROCK") ||
+                (player_value === "SCISSORS" && computer_value === "PAPER")){
+            return "You win! " + playerSelection + " beats " + computerSelection;
+        }
+        else return "You Lose! " + computerSelection + " beats " + playerSelection;;
+    }
+    
+    function game(){
+        for (let i = 0; i < 5; i++){
+            console.log(playRound(prompt("Enter value: "), getComputerChoice()));
+        }
+    }
+
+    game();
+</script>
