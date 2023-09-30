@@ -1,40 +1,40 @@
-<script>
-    function getComputerChoice(){
-        let choice = Math.floor(Math.random() * 3) +1;
-        switch (choice){
-            case 1:
-                return "Rock";
-                break;
-            case 2:
-                return "Paper";
-                break;
-            case 3:
-                return "Scissors";
-                break;
-        }
-    }
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="title">ROCK PAPER SCISSORS</h1>
+        </header>
+
+        <main class="main">
+            <div class="buttons">
+                <button class="rock-button">Rock</button>
+                <button class="paper-button">Paper</button>
+                <button class="scissors-button">Scissors</button>
+            </div>
+            <div class="round-results">The first to score 5 points is the winner</div>
+            <div class="score">
+                <div class="player-score">Player: 0</div>
+                <div class="computer-score">Computer: 0</div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <a>Copyright © 2023 bmk</a>
+        </footer>
 
 
-    function playRound(playerSelection, computerSelection){
-        player_value = playerSelection.toUpperCase()
-        computer_value = computerSelection.toUpperCase()
-        
-        if (player_value == computer_value){
-            return "Draw! " + playerSelection + " ties " + computerSelection;
-        }
-        else if ((player_value === "ROCK" && computer_value === "SCISSORS") ||
-                (player_value === "PAPER" && computer_value === "ROCK") ||
-                (player_value === "SCISSORS" && computer_value === "PAPER")){
-            return "You win! " + playerSelection + " beats " + computerSelection;
-        }
-        else return "You Lose! " + computerSelection + " beats " + playerSelection;;
-    }
-    
-    function game(){
-        for (let i = 0; i < 5; i++){
-            console.log(playRound(prompt("Enter value: "), getComputerChoice()));
-        }
-    }
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <a class="popup-message"></a>
+                <button class="restart-button">Play Again</button>
+            </div>
+        </div>
 
-    game();
-</script>
+        <script src="script.js"></script>
+    </body>
+</html>
